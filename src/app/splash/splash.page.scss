@@ -1,15 +1,17 @@
-#container {
-  text-align: center;
+.toolbar-title {
+  text-overflow: inherit;
+  white-space: normal;
+}
 
+#container {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #a5d6a9;
 }
 
 #container strong {
-  font-size: 20px;
+  font-size: 40px;
   line-height: 26px;
 }
 
@@ -18,10 +20,21 @@
   line-height: 22px;
 
   color: #8c8c8c;
-
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  margin:25%;
+}
+
+
+h3 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-splash',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class SplashPage {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(['login']);
+    }, 3000); // 3sec
+  }
 }

@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Patient Data
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-app>
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Patient Data</ion-title>
+      <ion-title size="small" color="primary">
+        Patient Data
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Splash Screen Health First</strong>
-    <ion-button [routerLink]="['/login']">Go to login screen</ion-button>
-  </div>
-</ion-content>
+  <ion-content [fullscreen]="true">
+    <h1>
+      <svg width="400" height="150">
+        <rect
+          width="400"
+          height="150"
+          style="fill: #a5d6a9; stroke-width: 3"
+        />
+      </svg>
+    </h1>
+
+    <h2>
+    <div id="container">
+      <strong>HealthFirst</strong>
+      <!-- <ion-button [routerLink]="['/login']">Go to login screen</ion-button> -->
+    </div>
+  </h2>
+
+  <h3>
+    <svg width="400" height="150">
+      <rect
+        width="400"
+        height="150"
+        style="fill: #a5d6a9; stroke-width: 3"
+      />
+    </svg>
+  </h3>
+  </ion-content>
+</ion-app>
