@@ -1,16 +1,33 @@
-<ion-app>
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title size="small" color="primary">
-        Patient Data
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <strong>Login Screen Health First</strong>
-    <ion-button [routerLink]="['/home']">Go to home screen</ion-button>
-  </div>
+<ion-content>
+  <form>
+    <ion-text>
+      <div><h1>HealthFirst</h1></div>
+    </ion-text>
+    <ion-item class="ion-margin" lines="full">
+      <ion-label position="floating">Care Provider id</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin" lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <div><h2>
+          <ion-button type="submit" expand="block"[routerLink]="['/home']">Sign In</ion-button>
+        </h2></div>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
-</ion-app>

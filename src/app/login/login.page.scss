@@ -1,11 +1,7 @@
 #container {
-  text-align: center;
-
-  position: absolute;
   left: 0;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
 }
 
 #container strong {
@@ -25,3 +21,16 @@
 #container a {
   text-decoration: none;
 }
+
+h1 {
+  text-align: center;
+  text-size-adjust: 60sp;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  color: #2DB744;
+}
+
+h2 {
+  margin-top: 75px;
+}
+
