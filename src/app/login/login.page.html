@@ -8,24 +8,41 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <form [formGroup]="signIn" (ngSubmit)="signInWithId()">
     <ion-text>
       <div><h1>HealthFirst</h1></div>
     </ion-text>
     <ion-item class="ion-margin" lines="full">
-      <ion-label position="floating">Care Provider id</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-label position="floating">Care Provider email</ion-label>
+      <ion-input type="email" formControlName="careProviderEmail" required></ion-input>
     </ion-item>
+    <div class ="error-container">
+      <ng-container *ngFor="let validation of validationMessages.careProviderEmail">
+        <div class="error-message" *ngIf="signIn.get('careProviderEmail').hasError(validation.type) && (signIn.get('careProviderEmail').dirty || signIn.get('careProviderEmail').touched)">
+          <ion-icon name="information-cßircle-outline"></ion-icon>
+          <span>{{validation.message}}</span>
+        </div>
+      </ng-container>
+    </div>
 
     <ion-item class="ion-margin" lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" formControlName="password" required></ion-input>
     </ion-item>
+    <div class="error-container">
+      <ng-container *ngFor="let validation of validationMessages.password">
+        <div class="error-message" *ngIf="signIn.get('password').hasError(validation.type) && (signIn.get('password').dirty || signIn.get('password').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
 
     <ion-row>
       <ion-col>
         <div><h2>
-          <ion-button type="submit" expand="block"[routerLink]="['/home']">Sign In</ion-button>
+          <ion-button type="submit" expand="block">Sign In</ion-button>
         </h2></div>
       </ion-col>
     </ion-row>
