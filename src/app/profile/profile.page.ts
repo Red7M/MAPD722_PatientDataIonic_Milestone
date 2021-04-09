@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['profile.page.scss'],
 })
 export class ProfilePage {
+  public patient;
 
-  constructor() {}
-
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.patient = this.router.getCurrentNavigation().extras.state;
+      }
+    });
+  }
 }

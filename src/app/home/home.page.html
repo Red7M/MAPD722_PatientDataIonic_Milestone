@@ -1,15 +1,40 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Patient Data</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-label>Search patients:</ion-label>
+  <ion-searchbar
+  placeholder="Type name or id of patients"
+  [(ngModel)]= "searchPatient"
+  animated="true">
+</ion-searchbar>
+  <ion-list *ngIf="searchPatient !== ''">
+    <ion-item *ngFor="let patient of patients | filter:searchPatient">
+      <ion-label (click) = "navigateToProfile(patient)">{{patient.username}}</ion-label>
+      <ion-label (click) = "navigateToProfile(patient)">{{patient.patientId}}</ion-label>
+    </ion-item>
+  </ion-list>
 
-  <div id="container">
-    <strong>Home Screen Health First</strong>
-    <ion-button [routerLink]="['/profile']">Go to profile screen</ion-button>
-  </div>
+  <ion-label>Search patients in critcal conditions:</ion-label>
+  <ion-searchbar
+  placeholder="Type name or id of patients"
+  [(ngModel)]= "searchInCriticalCondition"
+  animated="true">
+  </ion-searchbar>
+  <ion-list *ngIf="searchInCriticalCondition !== ''">
+    <ion-item *ngFor="let patient of patients | filter:searchPatient">
+        <ion-label *ngIf="patient.chronicCondition !== 'none'"
+        (click) = "navigateToProfile(patient)">{{patient.username}}
+        </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-label>Add patient</ion-label>
+  <ion-button expand="block">Click here to add new patient</ion-button> -->
 </ion-content>

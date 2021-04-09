@@ -25,3 +25,63 @@
 #container a {
   text-decoration: none;
 }
+
+.image-center{
+  margin:0 auto;
+}
+
+ion-avatar {
+  top: 40px;
+}
+
+ion-label {
+  margin-left: 5%;
+  text-align: center;
+}
+
+
+h2 {
+  font-weight:900;
+  margin: 0 20px 5px 5px;
+  font-size: small;
+  font-style: italic;
+}
+
+h3 {
+  float:left;
+  margin-left: 5px;
+  font-size: small;
+}
+
+h4 {
+  float:right;
+  margin-right: 5px;
+  font-size: small;
+}
+
+#div3 {
+  margin-top: 170px;
+}
+
+#div4 {
+  margin-top: 170px;
+}
+
+#div5 {
+  margin-top: 50px;
+}
+
+h5 {
+  font-weight:900;
+  float: left;
+  color: #2DB744;
+  margin-left: 5px;
+  font-size: small;
+}
+
+h6 {
+  float:right;
+  margin-right: 5px;
+  font-size: small;
+  font-weight:900;
+}

@@ -1,14 +1,40 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-label>
+    <ion-avatar class="image-center">
+      <img src={{patient.image}}/>
+    </ion-avatar>
+    <ion-text>
+      <div id="div1"><h1>{{patient.username}}</h1></div>
+    </ion-text>
+  </ion-label>
+  <div id="div2">
+    <h2>Patient Data</h2>
+    <h3>Age<br/><br/>Sex<br/><br/>Phone<br/><br/>Address</h3>
+    <h4>{{patient.age}}<br/><br/>{{patient.sex}}<br/><br/>{{patient.phone}}<br/><br/>{{patient.address}}</h4>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Patient Data</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="div3">
+    <h2>Medical Details</h2>
+    <h3>Blood Pressure<br/><br/>Respiratory Rate<br/><br/>Blood Oxygen Level<br/><br/>Heartbeat Rate</h3>
+    <h4>{{patient.bloodPressure}}<br/><br/>{{patient.respitoryRate}}<br/><br/>{{patient.bloodOxygenLevel}}<br/><br/>{{patient.heartBeatRate}}</h4>
+  </div>
 
-  <div id="container">
-    <strong>Profile Screen Health First</strong>
+  <div id="div4">
+    <h2>Critical Condition</h2>
+    <h3>Chronic Condition</h3>
+    <h4>{{patient.chronicCondition}}</h4>
+  </div>
+
+  <div id="div5">
+    <h5>Summary</h5>
+    <h6>{{patient.summary}}</h6>
   </div>
 </ion-content>
